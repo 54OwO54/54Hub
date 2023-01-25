@@ -1,0 +1,27 @@
+local part = game.workspace.DocRobberyImprovement.MoneyTable1
+local allpart = part:GetChildren()
+local part2 = game.workspace.DocRobberyImprovement.MoneyTable2
+local allpart2 = part:GetChildren()
+local team = game:GetService("Teams")
+local player = game.Players.LocalPlayer
+for _, obj in pairs(allpart) do
+obj.ProximityPrompt.Enabled = true  
+obj.ProximityPrompt.HoldDuration = 0
+end
+for _, obj in pairs(allpart2) do
+    obj.ProximityPrompt.Enabled = true  
+    obj.ProximityPrompt.HoldDuration = 0
+end
+local weapon = team.SOF:GetChildren()
+for _, tool in pairs(weapon) do
+tool.Parent = player.Backpack
+local chr = player.Character
+if chr.Humanoid.Health <= 0 then
+    local alltools = player.Backpack:GetChildren()
+    for _, tools in pairs(alltools) do
+    tools.Parent = Teams.SOF
+    wait(3)
+    tool.Parent = player.Backpack
+end    
+end
+end

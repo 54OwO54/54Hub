@@ -208,9 +208,9 @@ elseif game.PlaceId == 4620170611 then
     end
 
     function Pizza()
-        for count = 1, 200 do
-            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Pizza2")
-        end
+
+        game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Pizza2")
+
     end
 
     function Sword()

@@ -231,7 +231,15 @@ elseif game.PlaceId == 4620170611 then
         game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Plank")
     end
 
+    function BloxyCola()
+        for count = 1, 200 do
+            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("BloxyCola")
+        end
+    end
 
+    function MedKit()
+         game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("MedKit")
+    end
 
     local Window = OrionLib:MakeWindow({Name = "54Hub - BreakIn(Story)", HidePremium = false, IntroEnabled = true, IntroText = "54Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
     local PlayerTab = Window:MakeTab({
@@ -302,6 +310,18 @@ elseif game.PlaceId == 4620170611 then
         Name = "Plank",
         Callback = function()
             Plank()
+          end    
+    })
+    ToolTab:AddButton({
+        Name = "BloxyCola",
+        Callback = function()
+            BloxyCola()
+          end    
+    })
+    ToolTab:AddButton({
+        Name = "MedKit",
+        Callback = function()
+            MedKit()
           end    
     })
 else

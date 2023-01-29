@@ -92,21 +92,7 @@ elseif game.PlaceId == 3851622790 then
     
     --Functions
 
-    function Fast()
-        if _G.Fast == true then
-            hum.WalkSpeed = 50
-        elseif _G.Fast == false then
-            hum.WalkSpeed = 16
-        end
-    end
 
-    function HighJump()
-        if _G.HighJump == true then
-            hum.JumpPower = 100
-        elseif _G.HighJump == false then
-            hum.JumpPower = 50
-        end
-    end
 
     function Swat()
         game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole:FireServer("SwatGun",true)
@@ -129,20 +115,28 @@ elseif game.PlaceId == 3851622790 then
     })
 
 
-    PlayerTab:AddToggle({
-        Name = "Fast",
-        Default = false,
+    PlayerTab:AddSlider({
+        Name = "Speed",
+        Min = 16,
+        Max = 200,
+        Default = 5,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "SpeedPower",
         Callback = function(Value)
-            _G.Fast = Value
-            Fast()
+            hum.WalkSpeed = Value
         end    
     })
-    PlayerTab:AddToggle({
-        Name = "HighJump",
-        Default = false,
+    PlayerTab:AddSlider({
+        Name = "Jump",
+        Min = 50,
+        Max = 200,
+        Default = 5,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "JumpPower",
         Callback = function(Value)
-            _G.HighJump = Value
-            HighJump()
+            hum.JumpPower = Value
         end    
     })
 

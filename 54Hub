@@ -225,6 +225,7 @@ elseif game.PlaceId == 4620170611 then
         for count = 1, 300 do
             game:GetService("ReplicatedStorage").RemoteEvents.Energy:FireServer("Cat")
         end
+        game:GetService("ReplicatedStorage").RemoteEvents.Cattery:FireServer()
     end
 
     function Plank()

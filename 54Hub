@@ -1,0 +1,343 @@
+if game.PlaceId == 142823291 then
+    local player = game.Players.LocalPlayer
+    local chr = player.character
+    local hum = chr.Humanoid
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    
+    --Value
+    _G.Fast = true
+    
+    
+    --Functions
+
+    function Fast()
+        if _G.Fast == true then
+            hum.WalkSpeed = 50
+        elseif _G.Fast == false then
+            hum.WalkSpeed = 16
+        end
+    end
+
+    function HighJump()
+        if _G.HighJump == true then
+            hum.JumpPower = 100
+        elseif _G.HighJump == false then
+            hum.JumpPower = 50
+        end
+    end
+
+    function AutoFarm()
+        if _G.AutoFarm == true then
+            local coin = game.Workspace:GetDescendants() --偵測workspace所有的children
+            for _, obj in pairs(coin) do --跑一遍所有的children
+                if obj.Name == "CoinContainer" then --如果children的名字 = 金幣製造者 然後
+                    while wait(2) do
+                        local coins = obj:FindFirstChild("Coin_Server")
+                        if _G.AutoFarm == false then return end
+                        game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(coins.CFrame) --玩家的position = 金幣的position
+                    end
+                end
+            end
+        end
+    end
+
+    local Window = OrionLib:MakeWindow({Name = "54Hub - Murder Mystery 2", HidePremium = false, IntroEnabled = true, IntroText = "54Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
+    local PlayerTab = Window:MakeTab({
+        Name = "Player",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+
+    PlayerTab:AddToggle({
+        Name = "Fast",
+        Default = false,
+        Callback = function(Value)
+            _G.Fast = Value
+            Fast()
+        end    
+    })
+    PlayerTab:AddToggle({
+        Name = "HighJump",
+        Default = false,
+        Callback = function(Value)
+            _G.HighJump = Value
+            HighJump()
+        end    
+    })
+    local AutoFarmTab = Window:MakeTab({
+        Name = "AutoFarm",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+    AutoFarmTab:AddToggle({
+        Name = "AutoFarm",
+        Default = false,
+        Callback = function(Value)
+            _G.AutoFarm = Value
+            AutoFarm()
+        end    
+    })
+elseif game.PlaceId == 3851622790 then
+    local player = game.Players.LocalPlayer
+    local chr = player.character
+    local hum = chr.Humanoid
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    
+    --Value
+    _G.Fast = true
+    
+    
+    --Functions
+
+    function Fast()
+        if _G.Fast == true then
+            hum.WalkSpeed = 50
+        elseif _G.Fast == false then
+            hum.WalkSpeed = 16
+        end
+    end
+
+    function HighJump()
+        if _G.HighJump == true then
+            hum.JumpPower = 100
+        elseif _G.HighJump == false then
+            hum.JumpPower = 50
+        end
+    end
+
+    function Swat()
+        game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole:FireServer("SwatGun",true)
+    end
+
+    function Police()
+        game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole:FireServer("Gun",true)
+    end
+
+
+
+    local Window = OrionLib:MakeWindow({Name = "54Hub - Break In (Story)", HidePremium = false, IntroEnabled = true, IntroText = "54Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
+    local PlayerTab = Window:MakeTab({
+        Name = "Player",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+
+    PlayerTab:AddToggle({
+        Name = "Fast",
+        Default = false,
+        Callback = function(Value)
+            _G.Fast = Value
+            Fast()
+        end    
+    })
+    PlayerTab:AddToggle({
+        Name = "HighJump",
+        Default = false,
+        Callback = function(Value)
+            _G.HighJump = Value
+            HighJump()
+        end    
+    })
+
+    local RoleTab = Window:MakeTab({
+        Name = "Role",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+    RoleTab:AddButton({
+        Name = "Swat",
+        Callback = function()
+            Swat()
+          end    
+    })
+    RoleTab:AddButton({
+        Name = "Police",
+        Callback = function()
+            Police()
+          end    
+    })
+    
+elseif game.PlaceId == 4620170611 then
+    local player = game.Players.LocalPlayer
+    local chr = player.character
+    local hum = chr.Humanoid
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    
+
+    --Functions
+
+    function Fast()
+        if _G.Fast == true then
+            hum.WalkSpeed = 50
+        elseif _G.Fast == false then
+            hum.WalkSpeed = 16
+        end
+    end
+
+    function HighJump()
+        if _G.HighJump == true then
+            hum.JumpPower = 100
+        elseif _G.HighJump == false then
+            hum.JumpPower = 50
+        end
+    end
+
+    function Apple()
+        for count = 1, 200 do
+            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Apple")
+        end
+    end
+
+    function Cookie()
+        for count = 1, 200 do
+            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Cookie")
+        end
+    end
+
+    function Pizza()
+        for count = 1, 200 do
+            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Pizza2")
+        end
+    end
+
+    function Sword()
+        game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("LinkedSword")
+    end
+    
+    function ExpiredBloxyCola()
+        game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("ExpiredBloxyCola")
+    end
+
+    function HealSelf()
+        for count = 1, 300 do
+            game:GetService("ReplicatedStorage").RemoteEvents.Energy:FireServer("Cat")
+        end
+    end
+
+
+    local Window = OrionLib:MakeWindow({Name = "54Hub - BreakIn(Story)", HidePremium = false, IntroEnabled = true, IntroText = "54Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
+    local PlayerTab = Window:MakeTab({
+        Name = "Player",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+
+    PlayerTab:AddToggle({
+        Name = "Fast",
+        Default = false,
+        Callback = function(Value)
+            _G.Fast = Value
+            Fast()
+        end    
+    })
+    PlayerTab:AddToggle({
+        Name = "HighJump",
+        Default = false,
+        Callback = function(Value)
+            _G.HighJump = Value
+            HighJump()
+        end    
+    })
+    PlayerTab:AddButton({
+        Name = "HealSelf",
+        Callback = function()
+            HealSelf()
+          end    
+    })
+    local ToolTab = Window:MakeTab({
+        Name = "Tools",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+    ToolTab:AddButton({
+        Name = "Apples",
+        Callback = function()
+            Apple()
+          end    
+    })
+    ToolTab:AddButton({
+        Name = "Cookies",
+        Callback = function()
+            Cookie()
+          end    
+    })
+    ToolTab:AddButton({
+        Name = "Pizzas",
+        Callback = function()
+            Pizza()
+          end    
+    })
+    ToolTab:AddButton({
+        Name = "Sword",
+        Callback = function()
+            Sword()
+          end    
+    })
+    ToolTab:AddButton({
+        Name = "ExpiredBloxyCola",
+        Callback = function()
+            ExpiredBloxyCola()
+          end    
+    })
+else
+        local player = game.Players.LocalPlayer
+        local chr = player.character
+        local hum = chr.Humanoid
+        local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+        
+        --Value
+        _G.Fast = true
+        
+        
+        --Functions
+    
+        function Fast()
+            if _G.Fast == true then
+                hum.WalkSpeed = 50
+            elseif _G.Fast == false then
+                hum.WalkSpeed = 16
+            end
+        end
+    
+        function HighJump()
+            if _G.HighJump == true then
+                hum.JumpPower = 100
+            elseif _G.HighJump == false then
+                hum.JumpPower = 50
+            end
+        end
+
+    
+        local Window = OrionLib:MakeWindow({Name = "54Hub - AllGames", HidePremium = false, IntroEnabled = true, IntroText = "54Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
+        local PlayerTab = Window:MakeTab({
+            Name = "Player",
+            Icon = "rbxassetid://4483345998",
+            PremiumOnly = false
+        })
+    
+    
+        PlayerTab:AddToggle({
+            Name = "Fast",
+            Default = false,
+            Callback = function(Value)
+                _G.Fast = Value
+                Fast()
+            end    
+        })
+        PlayerTab:AddToggle({
+            Name = "HighJump",
+            Default = false,
+            Callback = function(Value)
+                _G.HighJump = Value
+                HighJump()
+            end    
+        })
+    end
+
+    
+
+
+OrionLib:Init()

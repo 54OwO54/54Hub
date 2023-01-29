@@ -1,3 +1,5 @@
+
+
 if game.PlaceId == 142823291 then
     local player = game.Players.LocalPlayer
     local chr = player.character
@@ -114,6 +116,9 @@ elseif game.PlaceId == 3851622790 then
         game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole:FireServer("Gun",true)
     end
 
+    function hardcore()
+        game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole:FireServer("LinkedSword",false)
+    end
 
 
     local Window = OrionLib:MakeWindow({Name = "54Hub - Break In (Story)", HidePremium = false, IntroEnabled = true, IntroText = "54Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
@@ -156,6 +161,12 @@ elseif game.PlaceId == 3851622790 then
         Name = "Police",
         Callback = function()
             Police()
+          end    
+    })
+    RoleTab:AddButton({
+        Name = "HardCore",
+        Callback = function()
+            hardcore()
           end    
     })
     
@@ -215,6 +226,7 @@ elseif game.PlaceId == 4620170611 then
             game:GetService("ReplicatedStorage").RemoteEvents.Energy:FireServer("Cat")
         end
     end
+
 
 
     local Window = OrionLib:MakeWindow({Name = "54Hub - BreakIn(Story)", HidePremium = false, IntroEnabled = true, IntroText = "54Hub", SaveConfig = true, ConfigFolder = "OrionTest"})

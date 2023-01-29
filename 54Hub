@@ -51,20 +51,28 @@ if game.PlaceId == 142823291 then
     })
 
 
-    PlayerTab:AddToggle({
-        Name = "Fast",
-        Default = false,
+    PlayerTab:AddSlider({
+        Name = "Speed",
+        Min = 16,
+        Max = 200,
+        Default = 5,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "SpeedPower",
         Callback = function(Value)
-            _G.Fast = Value
-            Fast()
+            hum.WalkSpeed = Value
         end    
     })
-    PlayerTab:AddToggle({
-        Name = "HighJump",
-        Default = false,
+    PlayerTab:AddSlider({
+        Name = "Jump",
+        Min = 50,
+        Max = 200,
+        Default = 5,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "JumpPower",
         Callback = function(Value)
-            _G.HighJump = Value
-            HighJump()
+            hum.JumpPower = Value
         end    
     })
     local AutoFarmTab = Window:MakeTab({
@@ -251,20 +259,28 @@ elseif game.PlaceId == 4620170611 then
     })
 
 
-    PlayerTab:AddToggle({
-        Name = "Fast",
-        Default = false,
+    PlayerTab:AddSlider({
+        Name = "Speed",
+        Min = 16,
+        Max = 200,
+        Default = 5,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "SpeedPower",
         Callback = function(Value)
-            _G.Fast = Value
-            Fast()
+            hum.WalkSpeed = Value
         end    
     })
-    PlayerTab:AddToggle({
-        Name = "HighJump",
-        Default = false,
+    PlayerTab:AddSlider({
+        Name = "Jump",
+        Min = 50,
+        Max = 200,
+        Default = 5,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "JumpPower",
         Callback = function(Value)
-            _G.HighJump = Value
-            HighJump()
+            hum.JumpPower = Value
         end    
     })
     PlayerTab:AddButton({
@@ -375,25 +391,33 @@ else
         })
     
     
-        PlayerTab:AddToggle({
-            Name = "Fast",
-            Default = false,
+        PlayerTab:AddSlider({
+            Name = "Speed",
+            Min = 16,
+            Max = 200,
+            Default = 5,
+            Color = Color3.fromRGB(255,255,255),
+            Increment = 1,
+            ValueName = "SpeedPower",
             Callback = function(Value)
-                _G.Fast = Value
-                Fast()
+                hum.WalkSpeed = Value
             end    
         })
-        PlayerTab:AddToggle({
-            Name = "HighJump",
-            Default = false,
+        PlayerTab:AddSlider({
+            Name = "Jump",
+            Min = 50,
+            Max = 200,
+            Default = 5,
+            Color = Color3.fromRGB(255,255,255),
+            Increment = 1,
+            ValueName = "JumpPower",
             Callback = function(Value)
-                _G.HighJump = Value
-                HighJump()
+                hum.JumpPower = Value
             end    
         })
+
     end
 
-    
 
 
 OrionLib:Init()

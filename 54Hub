@@ -245,6 +245,10 @@ elseif game.PlaceId == 4620170611 then
     function Lollipop()
         game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Lollipop")
     end
+
+    function Teddy()
+        game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("TeddyBloxpin")
+    end
     local Window = OrionLib:MakeWindow({Name = "54Hub - BreakIn(Story)", HidePremium = false, IntroEnabled = true, IntroText = "54Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
     local PlayerTab = Window:MakeTab({
         Name = "Player",
@@ -332,6 +336,12 @@ elseif game.PlaceId == 4620170611 then
         Name = "Lollipop",
         Callback = function()
             Lollipop()
+          end    
+    })
+    ToolTab:AddButton({
+        Name = "Teddy",
+        Callback = function()
+            Teddy()
           end    
     })
 else

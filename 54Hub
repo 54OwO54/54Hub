@@ -1,5 +1,3 @@
-
-
 if game.PlaceId == 142823291 then
     local player = game.Players.LocalPlayer
     local chr = player.character

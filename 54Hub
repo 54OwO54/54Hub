@@ -227,6 +227,10 @@ elseif game.PlaceId == 4620170611 then
         end
     end
 
+    function Plank()
+        game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Plank")
+    end
+
 
 
     local Window = OrionLib:MakeWindow({Name = "54Hub - BreakIn(Story)", HidePremium = false, IntroEnabled = true, IntroText = "54Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
@@ -292,6 +296,12 @@ elseif game.PlaceId == 4620170611 then
         Name = "ExpiredBloxyCola",
         Callback = function()
             ExpiredBloxyCola()
+          end    
+    })
+    ToolTab:AddButton({
+        Name = "Plank",
+        Callback = function()
+            Plank()
           end    
     })
 else
